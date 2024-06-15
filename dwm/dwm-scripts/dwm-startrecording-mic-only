@@ -1,0 +1,4 @@
+#!/bin/sh
+FILENAME=$(date +"%m-%d-%y_%H.%M.%S").mp4
+FOOTAGEDIR=/home/zeckma/Projects/Project-Resources/Footage/Current
+ffmpeg -re -framerate 60 -hwaccel vaapi -f x11grab -s 1920x1080 -thread_queue_size 1028 -i :0.0 -f pulse -thread_queue_size 1028 -i alsa_input.usb-Generic_Blue_Microphones_2110BAB05JH8-00.analog-stereo -c:v libx264 -crf 18 -pix_fmt yuv420p $FOOTAGEDIR/$FILENAME

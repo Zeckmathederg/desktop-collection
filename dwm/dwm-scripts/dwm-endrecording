@@ -1,0 +1,2 @@
+#!/bin/sh
+kill -n 2 $(pidof ffmpeg)

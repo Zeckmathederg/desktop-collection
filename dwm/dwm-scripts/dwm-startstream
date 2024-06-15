@@ -1,0 +1,3 @@
+#!/bin/sh
+STREAMKEY=$(cat /etc/streamkey)
+ffmpeg -hwaccel vaapi -re -framerate 60 -f x11grab -s 1920x1080 -thread_queue_size 1024 -i :0.0 -f pulse -thread_queue_size 1028 -i alsa_input.usb-Generic_Blue_Microphones_2110BAB05JH8-00.analog-stereo -f pulse -thread_queue_size 1028 -i alsa_output.pci-0000_0c_00.3.analog-stereo.monitor -filter_complex amix=inputs=2 -c:v libx264 -b:v 6000k -bufsize 6000k -maxrate 8000k -g 120 -profile:v high -pix_fmt yuv420p -g 60 -c:a aac -b:a 128k -ac 2 -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/$STREAMKEY 2>&1 | grep -v $STREAMKEY

@@ -1,0 +1,3 @@
+Simply copy the scripts starting with dwm-* to a path that's in the PATH
+variable. My DWM fork will then be able to find them. The scripts involving
+FFMpeg require libxcb support (has x11grab).

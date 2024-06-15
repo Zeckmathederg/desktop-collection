@@ -1,0 +1,4 @@
+#!/bin/sh
+FILENAME=Screenshot_$(date +"%m-%d-%y_%H.%M.%S").png
+FOOTAGEDIR=/home/zeckma/Projects/Project-Resources/Footage/Current
+ffmpeg -f x11grab -s 1920x1080 -i :0.0 -frames:v 1 $FOOTAGEDIR/$FILENAME 2> /dev/null
