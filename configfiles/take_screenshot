@@ -1,0 +1,4 @@
+#!/bin/sh
+FILENAME=Screenshot_$(date +"%m-%d-%y_%H.%M.%S").png
+FOOTAGEDIR=/home/zeckma/Projects/Project-Resources/Footage/Current
+grim -o DP-1 -c "$FOOTAGEDIR"/"$FILENAME"
