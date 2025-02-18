@@ -1,0 +1,19 @@
+### Begin /etc/fstab
+## Mount drives
+# /dev/nvme0n1p3
+UUID=e180192e-d49d-4f4a-baa0-1dbc348916cc / ext4 rw,relatime 0 1
+# /dev/nvme0n1p1
+UUID=1904-AC9D /boot/efi vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2
+# /dev/nvme0n1p2
+UUID=a615962a-68e1-424a-b314-b379b8fae644 swap swap pri=1 0 0
+
+## Mount virtual filesystems
+proc     /proc          proc     nosuid,noexec,nodev 0  0
+sysfs    /sys           sysfs    nosuid,noexec,nodev 0  0
+devpts   /dev/pts       devpts   gid=5,mode=620      0  0
+tmpfs    /run           tmpfs    defaults            0  0
+devtmpfs /dev           devtmpfs mode=0755,nosuid    0  0
+tmpfs    /dev/shm       tmpfs    nosuid,nodev        0  0
+cgroup2  /sys/fs/cgroup cgroup2  nosuid,noexec,nodev 0  0
+
+### End /etc/fstab
