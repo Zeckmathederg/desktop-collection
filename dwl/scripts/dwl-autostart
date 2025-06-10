@@ -1,0 +1,11 @@
+#!/bin/bash
+export XDG_CURRENT_DESKTOP=wlroots
+# nouveau: use --custom-mode instead of --mode
+# NVIDIA: use --mode instead of --custom-mode
+wlr-randr --output DP-1 --custom-mode 1920x1080@164.917
+wbg /home/zeckma/Pictures/Desktop/zeckma-banner-update1-prog1.png &
+# Pipewire has too many bugs, I ain't using it anymore
+#pipewire-launcher.sh & sleep 5; pipewire-launcher.sh &
+#/usr/libexec/xdg-desktop-portal &
+#dbus-run-session /usr/libexec/xdg-desktop-portal-wlr &
+fcitx5 &
